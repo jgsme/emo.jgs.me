@@ -1,0 +1,24 @@
+{
+  "private": true,
+  "name": "emo",
+  "scripts": {
+    "start": "if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
+    "build": "preact build",
+    "serve": "preact build && preact serve",
+    "dev": "preact watch",
+    "lint": "prettier --single-quote --no-semi --trailing-comma es5 --no-bracket-spacing index.js style.css",
+    "lint:dry": "npm run lint -- --list-different",
+    "lint:fix": "npm run lint -- --write"
+  },
+  "dependencies": {
+    "emojilib": "^2.2.12",
+    "preact-cli": "^2.1.1",
+    "preact-compat": "^3.17.0"
+  },
+  "devDependencies": {
+    "google-translate": "^2.0.5",
+    "if-env": "^1.0.0",
+    "preact-cli": "^2.1.0",
+    "prettier": "^1.9.2"
+  }
+}
