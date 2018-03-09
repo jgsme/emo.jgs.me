@@ -13,12 +13,12 @@
   "dependencies": {
     "emojilib": "^2.2.12",
     "preact-cli": "^2.1.1",
-    "preact-compat": "^3.17.0"
+    "preact-compat": "^3.18.0"
   },
   "devDependencies": {
-    "google-translate": "^2.0.5",
-    "if-env": "^1.0.0",
-    "preact-cli": "^2.1.0",
-    "prettier": "^1.9.2"
+    "google-translate": "^2.1.0",
+    "if-env": "^1.0.4",
+    "preact-cli": "^2.2.1",
+    "prettier": "^1.11.1"
   }
 }
