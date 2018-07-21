@@ -11,14 +11,14 @@
     "lint:fix": "npm run lint -- --write"
   },
   "dependencies": {
-    "emojilib": "^2.2.12",
+    "emojilib": "^2.3.0",
     "preact-cli": "^2.1.1",
     "preact-compat": "^3.18.0"
   },
   "devDependencies": {
-    "google-translate": "^2.1.0",
+    "google-translate": "^2.2.0",
     "if-env": "^1.0.4",
     "preact-cli": "^2.2.1",
-    "prettier": "^1.12.1"
+    "prettier": "^1.13.7"
   }
 }
