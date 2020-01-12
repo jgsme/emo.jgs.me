@@ -2,8 +2,7 @@
   "private": true,
   "name": "emo",
   "scripts": {
-    "sp": "snowpack --include \"src/*\"",
-    "opt": "yarn sp --optimize"
+    "build": "snowpack --optimize"
   },
   "dependencies": {
     "emojilib": "^2.3.0",
