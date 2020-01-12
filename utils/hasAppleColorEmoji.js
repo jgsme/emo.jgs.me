@@ -6,7 +6,7 @@ export default () => {
     span.innerText = '☺'
     span.style.fontFamily = font
     document.body.appendChild(span)
-    const dimensions = {w: span.offsetWidth, h: span.offsetHeight}
+    const dimensions = { w: span.offsetWidth, h: span.offsetHeight }
     document.body.removeChild(span)
     return dimensions
   }
