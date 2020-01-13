@@ -13,11 +13,27 @@ const getJson = async url => {
 
 const select = event => event.target.select()
 
+const checkHasAppleColorEmoji = () => {
+  const dimensionsFor = font => {
+    const span = document.createElement('span')
+    span.innerText = '☺'
+    span.style.fontFamily = font
+    document.body.appendChild(span)
+    const dimensions = { w: span.offsetWidth, h: span.offsetHeight }
+    document.body.removeChild(span)
+    return dimensions
+  }
+  const notAFont = dimensionsFor('thisisnotafont')
+  const appleColorEmoji = dimensionsFor('AppleColorEmoji')
+  return notAFont.w !== appleColorEmoji.w || notAFont.h !== appleColorEmoji.h
+}
+
 const App = () => {
   const [emojis, setEmojis] = useState([])
   const [filteredEmojis, setFilteredEmojis] = useState(emoji.ordered)
   const [word, setWord] = useState('')
   const [selected, setSelected] = useState('')
+  const [hasAppleColorEmoji, setHasAppleColorEmoji] = useState(true)
   const ref = createRef()
   const onInput = event => {
     const word = event.target.value
@@ -31,6 +47,7 @@ const App = () => {
   }
   const onClick = key => () => setSelected(key)
   useEffect(async () => {
+    setHasAppleColorEmoji(checkHasAppleColorEmoji())
     const [ja, custom] = await Promise.all([
       getJson('/assets/emojis.ja.json'),
       getJson('/assets/emojis.custom.ja.json')
@@ -103,6 +120,11 @@ const App = () => {
           `
         )}
       </div>
+      ${hasAppleColorEmoji
+        ? ''
+        : html`
+            <script src="//twemoji.maxcdn.com/2/twemoji.min.js?2.2.3"></script>
+          `}
     </div>
   `
 }
