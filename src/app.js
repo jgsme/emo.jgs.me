@@ -66,6 +66,11 @@ const App = () => {
         placeholder="Search..."
         ref=${ref}
       />
+      <a
+        href="https://github.com/kbystk/emo/edit/master/assets/emojis.custom.ja.json"
+      >
+        📝
+      </a>
       ${selected.length > 0
         ? html`
             <div class="selected">
