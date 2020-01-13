@@ -120,15 +120,6 @@ const App = () => {
           `
         )}
       </div>
-      ${hasAppleColorEmoji
-        ? ''
-        : html`
-            <script
-              src="https://twemoji.maxcdn.com/v/12.1.4/twemoji.min.js"
-              integrity="sha384-l2vnBuWDpO+2hY1VGTHGt533QP0iuI0FPJyR/gz5G0S4oOoGns9tVLjhrn1ygPY/"
-              crossorigin="anonymous"
-            ></script>
-          `}
     </div>
   `
 }
