@@ -16,7 +16,7 @@ const select = event => event.target.select()
 const checkHasAppleColorEmoji = () => {
   const dimensionsFor = font => {
     const span = document.createElement('span')
-    span.innerText = '☺'
+    span.innerText = '😀'
     span.style.fontFamily = font
     document.body.appendChild(span)
     const dimensions = { w: span.offsetWidth, h: span.offsetHeight }
@@ -123,7 +123,11 @@ const App = () => {
       ${hasAppleColorEmoji
         ? ''
         : html`
-            <script src="//twemoji.maxcdn.com/2/twemoji.min.js?2.2.3"></script>
+            <script
+              src="https://twemoji.maxcdn.com/v/12.1.4/twemoji.min.js"
+              integrity="sha384-l2vnBuWDpO+2hY1VGTHGt533QP0iuI0FPJyR/gz5G0S4oOoGns9tVLjhrn1ygPY/"
+              crossorigin="anonymous"
+            ></script>
           `}
     </div>
   `
