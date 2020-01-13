@@ -19,8 +19,17 @@ const App = () => {
   const [word, setWord] = useState('')
   const [selected, setSelected] = useState('')
   const ref = createRef()
-  const onInput = event => setWord(event.target.value)
-  const onClick = key => _ => setSelected(key)
+  const onInput = event => {
+    const word = event.target.value
+    setWord(word)
+    setFilteredEmojis(
+      emoji.ordered.filter(key => {
+        const e = emojis[key]
+        return e.forSearch.indexOf(word) > -1
+      })
+    )
+  }
+  const onClick = key => () => setSelected(key)
   useEffect(async () => {
     const [ja, custom] = await Promise.all([
       getJson('/assets/emojis.ja.json'),
